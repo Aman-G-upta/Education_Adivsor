@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://education-adivsor.onrender.com/api",
 });
 
 // This runs before every single request made through API.

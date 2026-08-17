@@ -10,7 +10,6 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -19,10 +18,22 @@ app.get("/", (req, res) => {
   });
 });
 
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://your-frontend-domain.vercel.app"   // add after you deploy frontend
+//   ],
+//   credentials: true
+// }));
+
 app.use("/api/skill-gap", require("./routes/skillGapRoutes"));
 app.use("/api/college-finder", require("./routes/collegeFinderRoutes"));
 app.use("/api/roadmap", require("./routes/roadmapRoutes"));
-app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/onboarding", require("./routes/onboardingRoutes"));
 app.use("/api/recommendation", require("./routes/recommendationRoutes"));   // <-- add this line
