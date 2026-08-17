@@ -19,17 +19,17 @@ app.get("/", (req, res) => {
 });
 
 
-app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
-}));
 // app.use(cors({
-//   origin: [
-//     "http://localhost:5173",
-//     "https://your-frontend-domain.vercel.app"   // add after you deploy frontend
-//   ],
+//   origin: "http://localhost:5173",
 //   credentials: true
 // }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://your-frontend-domain.vercel.app"   // add after you deploy frontend
+  ],
+  credentials: true
+}));
 
 app.use("/api/skill-gap", require("./routes/skillGapRoutes"));
 app.use("/api/college-finder", require("./routes/collegeFinderRoutes"));
