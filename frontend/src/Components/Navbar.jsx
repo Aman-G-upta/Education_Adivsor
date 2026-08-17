@@ -26,7 +26,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Link to={isLoggedIn ? "/dashboard" : "/"} className="navbar-brand">
         <span className="navbar-logo">E</span>
-        EduPath
+        ShikshaSetu
       </Link>
 
       {!hideLinks && (
