@@ -25,8 +25,8 @@ app.get("/", (req, res) => {
 // }));
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "https://your-frontend-domain.vercel.app"   // add after you deploy frontend
+    "https://shikhsasetu.vercel.app/"
+     
   ],
   credentials: true
 }));
